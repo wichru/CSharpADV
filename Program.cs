@@ -4,26 +4,30 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
-using System.IO;
 
-namespace XML_to_CSV
+namespace XML_to_HTML_table
 {
     class Program
     {
         static void Main(string[] args)
         {
-            StringBuilder sb = new StringBuilder();
-            string delimiter = ",";
+            XDocument result = new XDocument(
+                new XElement("table", new XAttribute("border", 1),
+                    new XElement("thead",
+                        new XElement("tr",
+                            new XElement("th", "Id"),
+                            new XElement("th", "Name"),
+                            new XElement("th", "Gender"),
+                            new XElement("th", "TotalMarks"))),
+                new XElement("tbody",
+                    from student in XDocument.Load(@"C:\Users\Maciek\source\repos\Linq_to_xml\data.xml").Descendants("Student")
+                    select new XElement("tr",
+                        new XElement("td", student.Attribute("Id").Value),
+                        new XElement("td", student.Element("Name").Value),
+                        new XElement("td", student.Attribute("Gender").Value),
+                        new XElement("td", student.Attribute("TotalMarks").Value)))));
 
-            XDocument.Load(@"C:\Users\Maciek\source\repos\Linq_to_xml\data.xml").Descendants("Student").ToList().ForEach(
-                element => sb.Append(element.Attribute("Id").Value + delimiter +
-                                     element.Element("Name").Value + delimiter +
-                                     element.Element("Gender").Value + delimiter +
-                                     element.Element("TotalMarks").Value + "\r\n"));
-
-            StreamWriter sw = new StreamWriter(@"C:\Users\Maciek\source\repos\Linq_to_xml\result.csv");
-            sw.WriteLine(sb.ToString());
-            sw.Close();
+            result.Save(@"C:\Users\Maciek\source\repos\Linq_to_xml\result.htm");
         }
     }
 }
