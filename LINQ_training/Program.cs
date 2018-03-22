@@ -25,6 +25,7 @@ namespace LINQ_training
                     new XElement("Child7", "infos7"),
                     new XElement("Child8", "infos8")));
 
+
             srcTree.Save("Tree.xml");
         }
     }
