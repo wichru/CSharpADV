@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27428.2002
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Linq_to_xml", "Linq_to_xml\Linq_to_xml.csproj", "{8A451589-5FAD-44BD-A824-155546774EA1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LINQ_training", "LINQ_training\LINQ_training.csproj", "{8F8D5815-E72F-4351-95E5-9D53A47D6335}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{8A451589-5FAD-44BD-A824-155546774EA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8A451589-5FAD-44BD-A824-155546774EA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8A451589-5FAD-44BD-A824-155546774EA1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F8D5815-E72F-4351-95E5-9D53A47D6335}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F8D5815-E72F-4351-95E5-9D53A47D6335}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F8D5815-E72F-4351-95E5-9D53A47D6335}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F8D5815-E72F-4351-95E5-9D53A47D6335}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
